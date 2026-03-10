@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evaluación Modular 5 | Veterinaria</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Centro Veterinario 🐾</h1>
+      <p class="muted">Gestión de pacientes (evaluación módulo 5)</p>
+    </header>
+
+    <!-- Mensajes -->
+    <section id="mensaje" class="mensaje" aria-live="polite"></section>
+
+    <!-- LOGIN -->
+    <section id="seccionLogin" class="card">
+      <h2>Ingreso veterinario</h2>
+
+      <form id="formLogin" class="form">
+        <label>
+          Usuario
+          <input id="loginUsuario" type="text" placeholder="ej: vet1" autocomplete="username" required />
+        </label>
+
+        <label>
+          Contraseña
+          <input id="loginPassword" type="password" placeholder="••••••" autocomplete="current-password" required />
+        </label>
+
+        <button type="submit">Ingresar</button>
+      </form>
+
+      <p class="muted small">
+        Tip: aquí validamos usuario/contraseña contra 2 veterinarios creados en el código.
+      </p>
+    </section>
+
+    <!-- APP (se muestra después de login) -->
+    <section id="seccionApp" class="card hidden">
+      <div class="row">
+        <h2>Panel de pacientes</h2>
+        <div class="right">
+          <span class="chip" id="vetActivo"></span>
+          <button id="btnLogout" class="secondary" type="button">Salir</button>
+        </div>
+      </div>
+
+      <!-- REGISTRO MASCOTA -->
+      <form id="formMascota" class="form">
+        <div class="grid">
+          <label>
+            Nombre mascota
+            <input id="mascotaNombre" type="text" placeholder="ej: Goku" required />
+          </label>
+
+          <label>
+            Tutor/a
+            <input id="mascotaTutor" type="text" placeholder="ej: Lolett" required />
+          </label>
+        </div>
+
+        <label>
+          Evolución médica
+          <textarea id="mascotaEvolucion" rows="3" placeholder="Notas, síntomas, control, etc." required></textarea>
+        </label>
+
+        <button type="submit">Registrar paciente</button>
+      </form>
+
+      <!-- LISTA -->
+      <section class="list">
+        <div class="row">
+          <h3>Pacientes registrados</h3>
+          <span class="muted small" id="contadorPacientes">0</span>
+        </div>
+
+        <ul id="listaPacientes" class="ul"></ul>
+      </section>
+    </section>
+
+    <footer class="footer muted small">
+      Hecho por Lolett — JavaScript (POO + DOM)
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
